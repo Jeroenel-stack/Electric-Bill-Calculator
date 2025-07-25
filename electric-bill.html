@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta charset="UTF-8">
+    <title>Electric Bill Calculator</title>
+</head>
+<body>
+    <h2>Check the Console (F12) to see the result</h2>
+    
+    <script>
+        function calculateElectricBill(kWh) {
+            let bill = 0;
+            if (kWh <= 100) {
+                bill = kWh * 5;
+            } else if (kWh <= 300) {
+                bill = (100 * 5) + ((kWh - 100) * 8);
+            } else {
+                bill = (100 * 5) + (200 * 8) + ((kWh - 300) * 10);
+            }
+            console.log(`Total bill for ${kWh} kWh: ₱${bill}`);
+        }
+
+        calculateElectricBill(350);
+    </script>
+</body>
+</html>
